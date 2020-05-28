@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>study_Javascript</title>
+</head>
+<body>
+     <script>
+        
+
+         function sayhello(name){
+             document.writeln('hello zxr ',name);
+         }
+         sayhello('zhangxinru')
+
+         var study_var=function(name){
+             var str1='字符串';
+             var num=15;
+             var f=3.1415927;
+             age=23;
+             var cars=new Array('a','b','c');
+             document.writeln('<br>');
+             document.writeln(str1);
+             document.writeln('<br>');
+             document.writeln(num);
+             document.writeln('<br>');
+             document.writeln(f);
+             document.writeln('<br>');
+             document.writeln(cars);
+             document.writeln('<br>');
+             document.writeln(age);
+             document.writeln('<br>');
+             document.writeln(name);
+         }('zhangxinru');
+
+         //study_var('zhangxinru')
+         //document.writeln(num);
+         document.writeln('<br>');
+         document.writeln(age);
+         document.writeln('<br>');
+         var sum=function(start,end){
+             var s=0;
+             var i;
+             for(i=start;i<=end;i++){
+                 s=s+i;
+             }
+             document.writeln('sum=',s);
+         }(1,100);
+         document.writeln('<br>');
+         var sum_while=function(start,end){
+             var s=0;
+             var i=start;
+             while(i<=end){
+                if (i % 2==1){
+                  //document.writeln(1);
+                  s = s + i;  
+                }  
+                i++;
+             }
+             document.writeln('sum_while=',s);
+            
+         }
+          sum_while(1,100);
+        
+          var for_in=function(arr){
+              for(var each in arr){
+                   document.writeln('<br>');
+                   document.writeln('arr['+each+']='+arr[each]);
+              }
+                 
+
+          }(new Array('a','test',1,3.1415,[1,2,3,4,5]))
+            
+            var static_person={
+                name:"zhangxinru",
+                birth:1980,
+                school:"zjbc",
+                height:1.70,
+                weight:65,
+                score:null
+            }
+            document.writeln('<br>');
+            document.writeln(static_person.name+'<br>');
+            document.writeln(static_person.school+'<br>');
+            delete static_person.school;
+            document.writeln(static_person.school+'<br>');
+            static_person.in_school='false';
+            document.writeln(static_person.in_school);
+            
+            var dynamic_person=new Object();
+            dynamic_person.name="xiaozhang";
+            dynamic_person.eat=function(){
+                alert(dynamic_person.name+"吃水果！");
+            }
+            dynamic_person.eat();
+
+            var function_person=function(name){
+                this.name=name;
+                this.eat=function(){
+                  alert(dynamic_person.name + "吃橘子!");
+                }
+            }
+            var p=new function_person("xiaozhang");
+            p.eat();
+     </script>
+</body>
+<html>
